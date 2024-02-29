@@ -34,7 +34,7 @@ export default function page() {
   return (
     <main className='w-full h-[100vh] flex justify-center items-center'>
       <section className=' w-[85%] h-[85%]  flex  *:bg-white'>
-        <section className='w-[60%] me-2'>
+        <section className='w-[60%] me-2 *:overflow-hidden'>
           <ToDo tackchnge={handel} ></ToDo>
         </section>
         <section className='w-[40%] ms-2'>
@@ -55,9 +55,15 @@ function ToDo({ tackchnge }) {
     const newTask = myval
     const newDate = mydate
     const newTime = mytime
-    tackchnge(newTask, newDate, newTime);
-    setMyval('')
 
+    if(newTask===""){
+      alert("Please enter a valid input");
+    }else{
+      tackchnge(newTask, newDate, newTime);
+      setMyval('')
+  
+    }
+   
 
   }
 
@@ -90,15 +96,16 @@ function List({ task, dates, times,remove_task }) {
 
 
   return (
-    <section className='w-full p-5 cursor-pointer'>
+    <section className='w-full p-5 cursor-pointer  h-[85vh] overflow-hidden ' >
+      <section className=' w-full h-full  overflow-y-scroll myscroll '>
       <section className='flex justify-center'>
         <h2 className='text-3xl font-extrabold text-[#474747] '>List</h2>
       </section>
-      <section className='flex w-full py-10  '>
+      <section className='flex w-full py-10  px-4   '>
         <section className=' w-full *:my-2'>
           {task.map((task, index) => (
             <>
-              <section key={index} className=' border border-gray-600 w-full rounded-md p-3'>
+              <section key={index} className=' border border-gray-600 w-full rounded-md p-3 '>
                 <div className=' flex justify-between '>
                   <h2 className=' text-xl font-semibold'>{task}</h2>
                   <IoClose onClick={()=>remove_task(index)} className=' flex items-center text-xl '></IoClose>
@@ -114,6 +121,7 @@ function List({ task, dates, times,remove_task }) {
           ))}
 
         </section>
+      </section>
       </section>
     </section>
   )

@@ -26,3 +26,14 @@ body {
     text-wrap: balance;
   }
 }
+
+.myscroll::-webkit-scrollbar{
+  width: 5px;
+
+}
+.myscroll::-webkit-scrollbar-thumb{
+  background-color: gray;
+  border-style: 20px;
+  padding-left: 5px;
+
+}
