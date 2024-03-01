@@ -61,7 +61,7 @@ function ToDo({ tackchnge, ClearAll }) {
   const [mytime, setMytime] = useState('')
 
   function Addpost() {
-    const newTask = myval
+    const newTask:any = myval
     const newDate = mydate
     const newTime = mytime
 
