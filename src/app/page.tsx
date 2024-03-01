@@ -6,9 +6,9 @@ import { IoClose } from "react-icons/io5";
 
 
 export default function page() {
-  const [task, setTask] = useState(() => JSON.parse(localStorage.getItem('task')) || [])
-  const [mydate, setMydate] = useState(() => JSON.parse(localStorage.getItem('dates')) || [])
-  const [times, setTimes] = useState(() => JSON.parse(localStorage.getItem('times')) || [])
+  const [task, setTask]: any = useState(() => JSON.parse(localStorage.getItem('task')) || [])
+  const [mydate, setMydate]: any = useState(() => JSON.parse(localStorage.getItem('dates')) || [])
+  const [times, setTimes]: any = useState(() => JSON.parse(localStorage.getItem('times')) || [])
 
   function handel(newtask, newDate, newTime) {
 
@@ -30,7 +30,7 @@ export default function page() {
     localStorage.setItem('task', JSON.stringify(updatedTasks));
   }
 
-  function ClearAll(){
+  function ClearAll() {
     setTask([])
     setMydate([])
     setTimes([])
@@ -54,7 +54,7 @@ export default function page() {
 }
 
 
-function ToDo({ tackchnge ,ClearAll}) {
+function ToDo({ tackchnge, ClearAll }) {
   const [myval, setMyval] = useState('')
   const [mydate, setMydate] = useState('')
   const [mytime, setMytime] = useState('')
@@ -72,7 +72,7 @@ function ToDo({ tackchnge ,ClearAll}) {
     }
   }
 
-  function Clearall(){
+  function Clearall() {
     setMydate('')
     setMytime('')
     setMyval('')
