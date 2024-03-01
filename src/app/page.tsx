@@ -6,9 +6,9 @@ import { IoClose } from "react-icons/io5";
 
 
 export default function page() {
-  const [task, setTask]: any = useState(() => JSON.parse(localStorage.getItem('task')) || [])
-  const [mydate, setMydate]: any = useState(() => JSON.parse(localStorage.getItem('dates')) || [])
-  const [times, setTimes]: any = useState(() => JSON.parse(localStorage.getItem('times')) || [])
+  const [task, setTask]= useState([] )
+  const [mydate, setMydate] = useState([] )
+  const [times, setTimes] = useState([])
 
   function handel(newtask, newDate, newTime) {
 
@@ -19,22 +19,22 @@ export default function page() {
     setTimes(updateTimes)
     setMydate(updateDate)
 
-    localStorage.setItem('task', JSON.stringify(updatetasks))
-    localStorage.setItem('dates', JSON.stringify(updateDate))
-    localStorage.setItem('times', JSON.stringify(updateTimes))
+    // localStorage.setItem('task', JSON.stringify(updatetasks))
+    // localStorage.setItem('dates', JSON.stringify(updateDate))
+    // localStorage.setItem('times', JSON.stringify(updateTimes))
   }
 
   function remove_task(index) {
     const updatedTasks = task.filter((_, i) => i !== index);
     setTask(updatedTasks)
-    localStorage.setItem('task', JSON.stringify(updatedTasks));
+    // localStorage.setItem('task', JSON.stringify(updatedTasks));
   }
 
   function ClearAll() {
     setTask([])
     setMydate([])
     setTimes([])
-    localStorage.clear()
+    // localStorage.clear()
   }
 
 
