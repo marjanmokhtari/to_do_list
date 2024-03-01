@@ -54,8 +54,9 @@ export default function page() {
   )
 }
 
+function ToDo({ tackchnge, ClearAll }:any) {
 
-function ToDo({ tackchnge, ClearAll }) {
+
   const [myval, setMyval] = useState('')
   const [mydate, setMydate] = useState('')
   const [mytime, setMytime] = useState('')
@@ -103,7 +104,7 @@ function ToDo({ tackchnge, ClearAll }) {
   )
 }
 
-function List({ task, dates, times, remove_task }) {
+function List({ task, dates, times, remove_task }:any) {
 
 
 
