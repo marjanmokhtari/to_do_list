@@ -18,7 +18,7 @@
 
 body {
   /* color: rgb(var(--foreground-rgb)); */
-  background:#999;
+  background:#131313;
 }
 
 @layer utilities {
@@ -32,7 +32,7 @@ body {
 
 }
 .myscroll::-webkit-scrollbar-thumb{
-  background-color: gray;
+  background-color: rgb(89, 89, 89);
   border-style: 20px;
   padding-left: 5px;
 
