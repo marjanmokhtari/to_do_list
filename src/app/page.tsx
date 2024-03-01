@@ -104,7 +104,15 @@ function ToDo({ tackchnge, ClearAll }:any) {
   )
 }
 
-function List({ task, dates, times, remove_task }:any) {
+
+type ListProp={
+  task:string[];
+  dates: string[];
+  times:string[];
+  remove_task:(index:number)=>void ;
+}
+
+function List({ task, dates, times, remove_task }:ListProp) {
 
 
 
