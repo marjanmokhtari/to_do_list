@@ -10,7 +10,7 @@ export default function page() {
   const [mydate, setMydate] = useState([] )
   const [times, setTimes] = useState([])
 
-  function handel(newtask, newDate, newTime) {
+ const handel:any=(newtask, newDate, newTime)=> {
 
     const updatetasks = [...task, newtask]
     const updateDate = [...mydate, newDate]
@@ -23,6 +23,7 @@ export default function page() {
     // localStorage.setItem('dates', JSON.stringify(updateDate))
     // localStorage.setItem('times', JSON.stringify(updateTimes))
   }
+ 
 
   function remove_task(index) {
     const updatedTasks = task.filter((_, i) => i !== index);
